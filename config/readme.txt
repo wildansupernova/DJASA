@@ -1,1 +1,0 @@
-kalo ada config di js taro disini
