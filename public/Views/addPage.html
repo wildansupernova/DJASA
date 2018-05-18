@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add Jasa</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=NTR" rel="stylesheet">
+</head>
+<body>
+
+<div class="text-center">
+  <h1 style="font-family:Comfortaa;">Add Jasa</h1>
+  <p>Resize this responsive page to see the effect!</p> 
+</div>
+  
+<div class="container">
+  <div class="col">
+        <div class="form-group">
+            <label for="titleJ">Jasa Title</label>
+            <input type="titleJ" class="form-control" id="jasaTitle" placeholder="Enter Jasa Title" name="email">
+            
+            <label for="email">Category</label>
+            <select class="form-control" id="sel1">
+                <option>Electronics</option>
+                <option>Housekeeping</option>
+                <option>Teknisi</option>
+                <option>Tiket Nonton</option>
+            </select>
+
+            
+            <label for="email">Jam Kerja</label>
+            <form class="form-inline" action="/action_page.php">
+                <label for="email">Hari : &nbsp</label>
+                <select class="form-control" id="sel1">
+                    <option>Senin</option>
+                    <option>Selasa</option>
+                    <option>Rabu</option>
+                    <option>Kamis</option>
+                    <option>Jumat</option>
+                    <option>Sabtu</option>
+                    <option>Minggu</option>
+                </select>
+                <div class="col-0">
+                    <label for="start-clock">&nbsp Jam Mulai &nbsp</label>
+                    <input type="text" class="form-control" id="start-clock">
+                </div>
+
+                <div class="col-0">
+                    <label for="pwd">&nbsp Jam Selesai&nbsp</label>
+                    <input type="text" class="form-control" id="end-clock">
+                </div>
+            </form>
+            <label for="titleJ">Photo</label>
+            <input type="file" class="form-control-file border"> 
+            <div class="form-group">
+                <label for="comment">Description :</label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div> 
+
+                
+            </form>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+
+</body>
+</html>
