@@ -126,7 +126,8 @@ app.get('/user/transaksi', function(req, res){
 
 
 //Data Layanan User
-app.get('/service/getservice', function(req, res){
+app.get('/service/getservice/:id', function(req, res){
+    // belum dikasih parameter id
     var res = select(con,"*","Service", function(res){
         console.log(res);
     });
@@ -143,7 +144,7 @@ app.get('/service/addservice', function(req, res){
     insert(elType,elmts,con);
 })
 
-app.get('/service/deleteservice', function(req, res){
+app.get('/service/deleteservice/:id', function(req, res){
     
 })
 
@@ -155,6 +156,10 @@ app.get('/services/searchservice', function(req, res){
     var res = select(con,search_var,"Service natural join Service_Pic natural join Service_Package", function(res){
         console.log(res);
     });
+})
+
+app.get('/services/getservices', function(req, res){
+
 })
 
 app.get('/services/kontrakservice', function(req, res){
