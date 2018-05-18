@@ -24,3 +24,11 @@
     height: 50%;
     border-radius: 50%;
 }
+
+.font-ntr{
+    font-family:'NTR', sans-serif;
+}
+
+.margin20{
+    margin: 20px;
+}

@@ -1,0 +1,52 @@
+* {
+    font-family: 'NTR', sans-serif;
+    font-size: 20px;
+}
+.orange{
+    background-color: orange;
+    border-radius: 25px;
+}
+img {
+<<<<<<< HEAD:public/content/css/login-signup.css
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 50%;
+    width: 55%;
+=======
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 40%;
+    align-content: center;
+}
+
+.container {
+    padding-left: 150px;
+    padding-right: 150px;
+>>>>>>> 6cfbd2e74885f2464cda08e3e1a80d81d37b0bf1:public/content/css/signup.css
+}
+
+#input-login-form {
+    margin: auto;
+<<<<<<< HEAD:public/content/css/login-signup.css
+    margin-top: 45%;
+=======
+    margin-top: 20px;
+    /* vertical-align: middle; */
+>>>>>>> 6cfbd2e74885f2464cda08e3e1a80d81d37b0bf1:public/content/css/signup.css
+}
+
+#button-login {
+    border-radius: 30px;
+}
+
+#not-have-account {
+    margin: 20px;
+    text-align: right;
+}
+
+.form-control {
+    border-radius: 30px;
+}
