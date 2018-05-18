@@ -3,7 +3,7 @@ CREATE DATABASE DJASA_DATABASE;
 USE DJASA_DATABASE;
 
 /*Deklarasi Database*/
-CREATE TABLE ACCOUNT(id_account int PRIMARY KEY,username varchar(24), nama varchar(35), password varchar(30), address text,email varchar(30),phone_number varchar(10), level int, prof_pic text, tanggal_pembuatan date, session_stat boolean);
+CREATE TABLE ACCOUNT(id_account int PRIMARY KEY,username varchar(24), nama varchar(35), password varchar(30), email varchar(30),phone_number varchar(10), prof_pic text, tanggal_pembuatan date, session_stat boolean);
 CREATE TABLE SERVICE(id_service int PRIMARY KEY, name varchar(24), description text, location varchar(40), category varchar(15), account_id int, FOREIGN KEY(account_id) references ACCOUNT(account_id));
 CREATE TABLE SERVICE_PIC(id_service int, id_pic int , picture text, PRIMARY KEY(id_service, id_pic) , FOREIGN KEY(id_service) references SERVICE(id_service));
 CREATE TABLE SERVICE_PACKAGE(id_service int, id_package int, price int, PRIMARY KEY(id_service,id_package), FOREIGN KEY(id_service) references SERVICE(id_service));
