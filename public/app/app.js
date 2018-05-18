@@ -10,6 +10,7 @@ function loginController($scope, $http) {
 
 function signupController($scope, $http) {
     var submitSignup = function() {
-        
+
     }
 }
+
