@@ -66,7 +66,12 @@
       opacity: 1;
       right: 0;
     }
-    
+    .carousel-indicators > li {
+      border-radius: 70%;
+    }
+    #myCarousel-indicators > li {
+      border-radius: 50%;
+    }
   </style>
 </head>
 
@@ -76,35 +81,38 @@
   <button class="button" style="float:right;"><span>Sign up &nbsp</span></button>
   <button class="button" style="float:right;"><span>Sign in &nbsp</span></button>
 </div>
-
+<br>
 <font color="white">
     <div id="demo" class="carousel slide" data-ride="carousel">
-
-        <!-- Indicators -->
-        <ul class="carousel-indicators">
-          <li data-target="#demo" data-slide-to="0" class="active"></li>
-          <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
-        
-        <!-- The slideshow -->
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row">
-                <div class="col-sm-8"><img src="la.jpg" alt="Los Angeles" width="800" height="500"></div>
-                <p>Halo</p>
+                <div class="col-6">
+                  <img src="la.jpg" alt="Los Angeles" width="100%" height="100%">
+                </div>
+                <div class="col-6">
+                    <p>Halo</p>
+                </div>
             </div>
           </div>
           <div class="carousel-item">
             <div class="row">
-              <div class="col-sm-8"><img src="ny.jpg" alt="Los Angeles" width="800" height="500"></div>
-              <p>Halo</p>
+                <div class="col-6">
+                  <img src="la.jpg" alt="Los Angeles" width="100%" height="100%">
+                </div>
+                <div class="col-6">
+                    <p>Halo</p>
+                </div>
             </div>
           </div>
           <div class="carousel-item">
             <div class="row">
-              <div class="col-sm-8"><img src="ny.jpg" alt="Los Angeles" width="800" height="500"></div>
-              <p>Halo</p>
+                <div class="col-6">
+                  <img src="ny.jpg" alt="Los Angeles" width="100%" height="100%">
+                </div>
+                <div class="col-6">
+                    <p>Halo</p>
+                </div>
             </div>
           </div>
         </div>

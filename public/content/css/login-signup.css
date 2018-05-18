@@ -2,21 +2,21 @@
     font-family: 'NTR', sans-serif;
     font-size: 20px;
 }
+.orange{
+    background-color: orange;
+    border-radius: 25px;
+}
 img {
     display: flex;
     justify-content: center;
     margin: auto;
-    /* position: absolute; */
     margin-top: 50%;
-    /* line-height: 50%; */
-    /* vertical-align: middle; */
     width: 55%;
 }
 
 #input-login-form {
     margin: auto;
     margin-top: 45%;
-    /* vertical-align: middle; */
 }
 
 #button-login {
