@@ -12,7 +12,7 @@ sql_conditions = ["=", ">", "<", ">=", "=<", "like"]
 sql_create = ["view", "table","database"]
 
 def initiateSQL() :
-    connection = pymysql.connect(host='localhost',user = 'root',password = 'unit52', db = 'Dictionary')
+    connection = pymysql.connect(host='localhost',user = 'root',password = '', db = 'Dictionary')
     return(connection)
 
 def getSQLResult(sq,connection, All = False):
