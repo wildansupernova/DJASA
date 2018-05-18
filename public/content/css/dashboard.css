@@ -10,3 +10,7 @@
 .goldColor{
     color:gold;
 }
+
+.card:hover{
+    border-color: #5B86E5;
+}

@@ -1,28 +1,41 @@
 // insert angular js code below
 
 var djasaApp = angular.module('djasaApp', ['ngRoute', 'naif.base64']);
+djasaApp.factory('myService', function() {
+    var savedData = {};
+    function set(data) {
+      savedData = data;
+    }
+    function get() {
+     return savedData;
+    }
+   
+    return {
+     set: set,
+     get: get
+    }
+   
+});
 
-djasaApp.service('sharedData', function() {
-    var data;
-    var isNull = true;
-  
+djasaApp.factory('sharedData', function() {
+    var data = {};
+
     var addData = function(newObj) {
-        data = newObj;
-        isNull = false;
+        data = newObj;  
     };
   
     var getData = function(){
-        isNull = true;
         return data;
     };
   
     return {
       addData: addData,
       getData: getData,
-      isNull: isNull
     };
   
   });
+
+
 
 djasaApp.config(function($routeProvider){
     $routeProvider
@@ -69,12 +82,12 @@ djasaApp.config(function($routeProvider){
 
 djasaApp.controller("listServiceController", function($scope, $http){
     $http.get('/user/session')
-        .success(function(data){
+        .then(function(data){
             $scope.user = data;
         })
     $scope.listService = []
     $http.get('/service/getservice/' + $scope.user.id)
-        .success(function(data){
+        .then(function(data){
             $scope.listService = data;
         })
 
@@ -83,50 +96,91 @@ djasaApp.controller("listServiceController", function($scope, $http){
     }
 })
 
-djasaApp.controller("loginController", function($scope, $http) {
+djasaApp.controller("loginController", function($scope, $http, $location) {
     $scope.submitLogin = function() {
         $http.post('/user/login', $scope.login)
-            .success(function(data){
+            .then(function(data){
                 // sharedData.addData(data);
-                if(data.length > 0){
+                // if(data.length > 0){
+                    console.log("wildan");
                     $location.path("/home");
-                }
+                // }
             })
     }
 });
 
-djasaApp.controller("signupController", function($scope, $http, sharedData) {
+djasaApp.controller("signupController", function($scope, $http, sharedData, $location) {
     $scope.submitSignup = function() {
+        console.log($scope.signup);
         $http.post('/user/signup', $scope.signup)
-            .success(function(data){
+            .then(function(data){
                 $location.path("/home");
             })
     }
 });
 
-djasaApp.controller("addServiceController", function($scope, $http) {
-    // $http.get('/user/session')
-    //     .success(function(data){
-    //         $scope.user = data;
-    //     })
+djasaApp.controller("addServiceController", function($scope, $http, $location) {
+    $http.get('/user/session')
+        .then(function(response){
+            $scope.data = response.data;
+        })
     $scope.submitNewService = function() {
-        // $http.post('/service/addservice', $scope.addService);
-        console.log($scope.addService.description);
-        console.log($scope.addService.photo);
         
+        $scope.addService.account_id = $scope.data.id_account;
+        
+        $scope.addService.base64 =  "data:image/jpeg;base64,"+$scope.addService.photo.base64;
+        console.log($scope.data);
+        console.log($scope.addService.base64)
+        console.log($scope.addService);
+        $http.post('/services/addservices', $scope.addService)
+        .then(function(response){
+            console.log("wildan");
+            $location.path("/home");
+        })        
     }
     
 });
 
-djasaApp.controller("navbarController", function($scope, $http, sharedData) {
+// djasaApp.controller("navbarController", function($scope, $http, sharedData) {
+//     // $http.get('/user/session')
+//     //     .then(function(data){
+//     //         console.log(data);
+//     //     })
+//     $scope.logOut = function() {
+//         $http.post('/user/logout', $scope.user.id)
+//             .then(function(data){
+//                 // $location.path('/landing');
+//             })
+//     }
+
+//     $scope.searchCategory = function(category) {
+//         sharedData.addData(category);
+//     }
+
+// });
+
+djasaApp.controller("dashboardController", function($scope, $http, $location,myService) {
     $http.get('/user/session')
-        .success(function(data){
-            $scope.user = data;
+        .then(function(response){
+            $scope.data = response.data;            
         })
+    // var services = 
+    
+    // var category = sharedData.getData();
+    
+    // if(sharedData.isNull){
+    //     category = null;
+    // }
+
+    $http.get('/services/getservices')
+        .then(function(response){
+            $scope.services = response.data;
+        })
+    // lanjutkan
     $scope.logOut = function() {
-        $http.post('/user/logout', $scope.user.id)
-            .success(function(data){
-                // $location.path('/landing');
+        $http.post('/user/logout', $scope.data)
+            .then(function(response){
+                console.log("masuk");
             })
     }
 
@@ -134,40 +188,34 @@ djasaApp.controller("navbarController", function($scope, $http, sharedData) {
         sharedData.addData(category);
     }
 
-});
-
-djasaApp.controller("dashboardController", function($scope, $http, sharedData) {
-    $http.get('/user/session')
-        .success(function(data){
-            $scope.user = data;
-        })
-    // var services = 
-    var category = sharedData.getData();
-    if(sharedData.isNull){
-        category = null;
-    }
-
-    $http.get('/services/getservices')
-        .success(function(data){
-            $scope.services = data;
-        })
-    // lanjutkan
-    
     $scope.openDetailService = function(service){
         //kirim data service
-        sharedData.addData(service); 
+        // sharedData.addData(service); 
+        myService.set(service);
         //ubah location
-        $location.path('/detail')
+        $location.path('/detail');
     }
 });
 
-djasaApp.controller("detailController", function($scope, $http, sharedData){
+djasaApp.controller("detailController", function($scope, $http, myService){
     $http.get('/user/session')
-        .success(function(data){
-            $scope.user = data;
+        .then(function(response){
+            $scope.data = response;
         })
-    var service = sharedData.getData();
+    console.log(myService.get());
+    // console.log(sharedData.getData());
+    $scope.service = myService.get();   
+    $http.get('/user/' + $scope.service.id_account)
+        .then(function(response){
+            $scope.vendor = response;
+        })
+    // console.log($scope.service);
+    // console.log($scope.vendor);
     $scope.contract = function(){
         
     }
 });
+
+
+
+

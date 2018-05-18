@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Add Jasa</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css?family=NTR" rel="stylesheet">
-</head>
-<body>
 
 <div class="text-center">
   <h1 style="font-family:Comfortaa;">Add Jasa</h1>
@@ -33,30 +26,13 @@
             </select>
 
             
-            <label for="email">Jam Kerja</label>
-            <form class="form-inline" action="/action_page.php">
-                <label for="email">Hari : &nbsp</label>
-                <select class="form-control" id="sel1" ng-model="addService.hariKerja">
-                    <option>Senin</option>
-                    <option>Selasa</option>
-                    <option>Rabu</option>
-                    <option>Kamis</option>
-                    <option>Jumat</option>
-                    <option>Sabtu</option>
-                    <option>Minggu</option>
-                </select>
-                <div class="col-0">
-                    <!-- <label for="start-clock">&nbsp  &nbsp</label> -->
-                    <input type="text" class="form-control" placeholder="Jam Mulai" id="start-clock" ng-model="addService.jamMulai">
-                </div>
-
-                <div class="col-0">
-                    <!-- <label for="pwd">&nbsp Jam Selesai&nbsp</label> -->
-                    <input type="text" class="form-control" placeholder="Jam Selesai" id="end-clock" ng-model="addService.jamAkhir">
-                </div>
-            </form>
+            
             <label for="titleJ">Photo</label>
             <input type="file" class="form-control-file border" ng-model="addService.photo" base-sixty-four-input> 
+            <div class="form-group">
+                <label for="comment">Price Description :</label>
+                <textarea class="form-control" rows="5" id="comment" ng-model="addService.price"></textarea>
+            </div> 
             <div class="form-group">
                 <label for="comment">Description :</label>
                 <textarea class="form-control" rows="5" id="comment" ng-model="addService.description"></textarea>
@@ -69,5 +45,3 @@
   </div>
 </div>
 
-</body>
-</html>
