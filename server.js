@@ -40,8 +40,8 @@ app.post('/user/logout', function(req, res){
     
 })
 
-app.get('/user/isLogin', function(req, res){
-    
+app.get('/user/session', function(req, res){
+    // response user with session true
 })
 
 
@@ -51,7 +51,7 @@ app.get('/user/transaksi', function(req, res){
 
 
 //Data Layanan User
-app.get('/service/getservice', function(req, res){
+app.get('/service/getservice/:id', function(req, res){
     
 })
 
@@ -59,7 +59,7 @@ app.get('/service/addservice', function(req, res){
     
 })
 
-app.get('/service/deleteservice', function(req, res){
+app.get('/service/deleteservice/:id', function(req, res){
     
 })
 
@@ -67,6 +67,10 @@ app.get('/service/deleteservice', function(req, res){
 
 app.get('/services/searchservice', function(req, res){
     
+})
+
+app.get('/services/getservices', function(req, res){
+
 })
 
 app.get('/services/kontrakservice', function(req, res){
