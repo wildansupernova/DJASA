@@ -14,16 +14,60 @@
     body{
       background-color: #5B86E5;
     }
+
+    
+
+    .button {
+      border-radius: 4px;
+      background-color: #5B86E5;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 30px;
+      padding: 10px;
+      width: 150px;
+      transition: all 1s;
+      cursor: pointer;
+      margin: 5px;
+      line-height: 2em;
+    }
+
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+
+    .button:hover span {
+      padding-right: 25px;
+    }
+
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
   </style>
 </head>
 
 <body style="font-family:NTR;">
-<div class="">
-  <h1 style="font-family:Comfortaa; color: white", align="left"><b>&nbsp Djasa</b></h1>
+<div class="row" >
+  <div class="col-sm-8" ><h1 style="font-family:Comfortaa; color: white;", align="left"><b>&nbsp Djasa</b></h1></div>
+  <button class="button" style="float:right;"><span>Sign up &nbsp</span></button>
+  <button class="button" style="float:right;"><span>Sign in &nbsp</span></button>
 </div>
+
 <font color="white">
 <div class="container">
-  <h2 style="font-family:Comfortaa;">Carousel Example</h2>  
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -46,10 +90,10 @@
       </div>
 
       <div class="item">
-        <div class="container">
+        <div class="container" style="min-height:100%" >
           <div class="row">
             <div class="col-sm-8">
-                <img src="ny.jpg" alt="New York" style="width:100%;">
+                <img src="ny.png" alt="New York" style="width:75%;height:50%;">
             </div>
             <h2>Tester</h2>
           </div>
