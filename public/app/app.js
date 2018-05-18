@@ -7,6 +7,14 @@ djasaApp.config(function($routeProvider){
         .when("/", {
             templateUrl : "landing.html",
             controller: "landingController"
+        }).
+        when("/login", {
+            templateUrl : "login.html",
+            controller: "loginController"
+        })
+        .when("/signup", {
+            templateUrl : "signup.html",
+            controller: "signupController"
         })
         .when("/home", {
             templateUrl: "dashboard.html",
@@ -23,6 +31,11 @@ djasaApp.config(function($routeProvider){
         .when("/myservice", {
             templateUrl: "myservice.html", //sesuaikan namanya
             controller: "myServiceController"
+        })
+        .when("/detail/:id", {
+            templateUrl: function(routeParams){
+                // routeParams.id == id service
+            }
         })
         .otherwise({
             template : "<h1>404 Page Not Found</h1>"
@@ -52,6 +65,13 @@ function navbarController($scope, $http) {
 
     }
 
-    
+    var searchCategory = function(category) {
+
+    }
+
+}
+
+function dashboardController($scope, $http) {
+    // var services = 
 }
 
