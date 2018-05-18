@@ -1,3 +1,6 @@
+*{
+    font-family:'NTR', sans-serif;
+}
 .orange{
     background-color: orange;
     border-radius: 25px;
@@ -31,4 +34,9 @@
 
 .margin20{
     margin: 20px;
+}
+
+.container-cara{
+    padding-bottom: 10px;
+    margin-bottom: 15px;
 }
