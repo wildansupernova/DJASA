@@ -211,10 +211,54 @@ app.post("/user/logout", function(req, res){
 })
 
 
-app.post('/user/add')
+app.get("/review/getreview/:id",(req,res) =>{
+    var sql = "select * from review natural join account where id_account="+req.params.id;
+    var cony = mysql.createConnection(database);
+    cony.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected!");
+    });
+
+    cony.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log(result.affectedRows + " record(s) updated");
+        cony.end();
+        res.json(result);
+    });
+});
 
 
+app.get("/user/getmylist/:id",function(req,res){
+    var query = "SELECT DISTINCT * FROM SERVICE JOIN ACCOUNT ON account.id_account = service.account_id where id_account="+req.params.id+";";
+    var cony = mysql.createConnection(database);
+    cony.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected!");
+    });  
 
+    cony.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log(result.affectedRows + " record(s) updated");
+        cony.end();
+        res.json(result);
+    });
+});
+
+app.post('/delete',function(req,res){
+    var query = "delete from service where id_service="+req.body.id_service+";";
+    var cony = mysql.createConnection(database);
+    cony.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected!");
+    });  
+
+    cony.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log(result.affectedRows + " record(s) deleted");
+        cony.end();
+        res.json(result);
+    });   
+})
 
 ////////////////////////
 

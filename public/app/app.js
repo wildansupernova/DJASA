@@ -63,15 +63,11 @@ djasaApp.config(function($routeProvider){
             templateUrl: "/views/addPage.html",
             controller: "addServiceController"
         })
-        .when("/myservice", {
-            templateUrl: "/views/listservice.html", //sesuaikan namanya
-            controller: "myServiceController"
-        })
         .when("/detail", {
             templateUrl: "/views/detail.html",
             controller: "detailController"
         })
-        .when("/listservice", {
+        .when("/myservice", {
             templateUrl: "/views/listservice.html",
             controller: "listServiceController"
         })
@@ -80,19 +76,36 @@ djasaApp.config(function($routeProvider){
         })
 });
 
-djasaApp.controller("listServiceController", function($scope, $http){
+djasaApp.controller("listServiceController", function($q, $scope, $http){
+    // $scope.user = {};
+    var deffered = $q.defer();
     $http.get('/user/session')
-        .then(function(data){
-            $scope.user = data;
+        .then(function(response){
+            deffered = response.data;
+
+            console.log($scope.data);
         })
-    $scope.listService = []
-    $http.get('/service/getservice/' + $scope.user.id)
-        .then(function(data){
-            $scope.listService = data;
+    
+        $scope.data = deffered.promise;
+
+    $http.get('/user/getmylist/' + $scope.data.id_account.promise)
+        .then(function(response){
+            $scope.listServices = response;
+            console.log(response);
         })
+    // console.log($scope.data)
+    // $http.get('/user/getmylist/' + $scope.data.id_account)
+    //     .then(function(response){
+    //         $scope.listServices = response;
+    //         console.log(response);
+    //     })
 
     $scope.remove = function(service){
-        $http.get('/service/deleteservice/' + service.id);
+        $http.post('/delete', service)
+        .then(function(data){
+            var pos = $scope.listServices.indexOf('service');
+            $scope.listServices.splice(pos,1);
+        })
     }
 })
 
@@ -108,6 +121,8 @@ djasaApp.controller("loginController", function($scope, $http, $location) {
             })
     }
 });
+
+
 
 djasaApp.controller("signupController", function($scope, $http, sharedData, $location) {
     $scope.submitSignup = function() {
@@ -208,6 +223,11 @@ djasaApp.controller("detailController", function($scope, $http, myService){
     $http.get('/user/' + $scope.service.id_account)
         .then(function(response){
             $scope.vendor = response;
+        })
+
+    $http.get('/review/getreview/' + $scope.service.id_account)
+        .then(function(response){
+            $scope.reviews = response;
         })
     // console.log($scope.service);
     // console.log($scope.vendor);

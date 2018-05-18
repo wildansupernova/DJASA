@@ -136,6 +136,16 @@
                 <p>wey bagus banget jasanya heheh</p>
             </div>
         </div>
+        <div class="row" ng-repeat="review in reviews">
+            <div class="col-2">
+                <img src="views/bird.jpg" alt="Logo" style="width:60%;" class="rounded-circle imageMargin float-right">
+            </div>
+            <div class="col-10">
+                <h3 class="font-ntr">{{review.nama}}</h3>
+                <small class="text-muted">{{review.creation_date}}</small>
+                <p>{{review.description}}</p>
+            </div>
+        </div>
         <!-- jangan lupa make hr -->
     </div>
     </div>
