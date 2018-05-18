@@ -1,0 +1,36 @@
+* {
+    font-family: 'NTR', sans-serif;
+    font-size: 20px;
+}
+img {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 30%;
+    align-content: center;
+}
+
+.container {
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+#input-login-form {
+    margin: auto;
+    margin-top: 30px;
+    /* vertical-align: middle; */
+}
+
+#button-login {
+    border-radius: 30px;
+}
+
+#not-have-account {
+    margin: 20px;
+    text-align: right;
+}
+
+.form-control {
+    border-radius: 30px;
+}
