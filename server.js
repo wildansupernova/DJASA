@@ -84,19 +84,8 @@ app.get('/', function(req, res){
     res.sendFile('index.html');
 })
 
-//Users
-app.post('/user/register', function(req, res){
-    username = "Aku";
-    nama = "Pejantan Tangguh";
-    password = "giaidiashd";
-    address = "New York";
-    email = "stark@gmail.com";
-    phone_number = "0862152611";
-    prof_pic = "stubpic";
-    tanggal_pembuatan = "";
-    var elType = ["username","nama","password","email","phone_number","prof_pic","tanggal_pembuatan"];
-    var elmts = [username,nama,password,email,phone_number,prof_pic,tanggal_pembuatan];
-    insert(elType,elmts,con);
+app.get('/user/session', function(req, res){
+
 })
 
 app.post('/user/login', function(req, res){
@@ -104,66 +93,17 @@ app.post('/user/login', function(req, res){
     console.log(req.body.username);
 });
 
-app.post('/user/logout', function(req, res){
-    var res = select(con,"username,password","Account", function(res){
-        console.log(res);
-    });
-})
-
-app.get('/user/session', function(req, res){
-    var res = select(con,"username,session","Account", function(res){
-        console.log(res);
-    });
-})
-
-
-app.get('/user/transaksi', function(req, res){
-    var res = select(con,"*","Transaction", function(res){
-        console.log(res);
-    });
-})
-
-
-//Data Layanan User
-app.get('/service/getservice/:id', function(req, res){
-    // belum dikasih parameter id
-    var res = select(con,"*","Service", function(res){
-        console.log(res);
-    });
-})
-
-app.get('/service/addservice', function(req, res){
-    nama = "Cinta Sejati";
-    desc = "Loren Ipsum";
-    location = "Wakanda";
-    category = "Cinta";
-    account_id = 1;
-    var elType = ["name","description","location","category","account_id"];
-    var elmts = [nama,desc,add,email,phone_number,prof_pic,tanggal_pembuatan];
-    insert(elType,elmts,con);
-})
-
-app.get('/service/deleteservice/:id', function(req, res){
-    
-})
-
-//Data Layanan Global
-
-app.get('/services/searchservice', function(req, res){
-    
-    search_var = "AS"
-    var res = select(con,search_var,"Service natural join Service_Pic natural join Service_Package", function(res){
-        console.log(res);
-    });
-})
-
-app.get('/services/getservices', function(req, res){
+app.post('/user/signup', function(req, res){
 
 })
 
-app.get('/services/kontrakservice', function(req, res){
-    
+app.post('/user/addservice', function(req, res){
+
 })
+
+app.post('/user/add')
+
+
 
 
 ////////////////////////

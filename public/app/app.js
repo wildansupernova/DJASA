@@ -1,6 +1,6 @@
 // insert angular js code below
 
-var djasaApp = angular.module('djasaApp', ['ngRoute']);
+var djasaApp = angular.module('djasaApp', ['ngRoute', 'naif.base64']);
 
 djasaApp.service('sharedData', function() {
     var data;
@@ -105,13 +105,17 @@ djasaApp.controller("signupController", function($scope, $http, sharedData) {
 });
 
 djasaApp.controller("addServiceController", function($scope, $http) {
-    $http.get('/user/session')
-        .success(function(data){
-            $scope.user = data;
-        })
+    // $http.get('/user/session')
+    //     .success(function(data){
+    //         $scope.user = data;
+    //     })
     $scope.submitNewService = function() {
-        $http.post('/service/addservice', $scope.addService);
+        // $http.post('/service/addservice', $scope.addService);
+        console.log($scope.addService.description);
+        console.log($scope.addService.photo);
+        
     }
+    
 });
 
 djasaApp.controller("navbarController", function($scope, $http, sharedData) {

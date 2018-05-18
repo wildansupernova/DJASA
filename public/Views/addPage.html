@@ -46,17 +46,17 @@
                     <option>Minggu</option>
                 </select>
                 <div class="col-0">
-                    <label for="start-clock">&nbsp Jam Mulai &nbsp</label>
-                    <input type="text" class="form-control" id="start-clock" ng-model="addService.jamMulai">
+                    <!-- <label for="start-clock">&nbsp  &nbsp</label> -->
+                    <input type="text" class="form-control" placeholder="Jam Mulai" id="start-clock" ng-model="addService.jamMulai">
                 </div>
 
                 <div class="col-0">
-                    <label for="pwd">&nbsp Jam Selesai&nbsp</label>
-                    <input type="text" class="form-control" id="end-clock" ng-model="addService.jamAkhir">
+                    <!-- <label for="pwd">&nbsp Jam Selesai&nbsp</label> -->
+                    <input type="text" class="form-control" placeholder="Jam Selesai" id="end-clock" ng-model="addService.jamAkhir">
                 </div>
             </form>
             <label for="titleJ">Photo</label>
-            <input type="file" class="form-control-file border" ng-model="addService.photo"> 
+            <input type="file" class="form-control-file border" ng-model="addService.photo" base-sixty-four-input> 
             <div class="form-group">
                 <label for="comment">Description :</label>
                 <textarea class="form-control" rows="5" id="comment" ng-model="addService.description"></textarea>
@@ -65,7 +65,7 @@
                 
             </form>
         </div>
-        <button type="submit" class="btn btn-primary" ng-submit="submitNewService()">Submit</button>
+        <button type="submit" class="btn btn-primary" ng-click="submitNewService()">Submit</button>
   </div>
 </div>
 
