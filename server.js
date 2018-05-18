@@ -111,7 +111,7 @@ app.post('/user/logout', function(req, res){
     });
 })
 
-app.get('/user/isLogin', function(req, res){
+app.get('/user/session', function(req, res){
     var res = select(con,"username,session","Account", function(res){
         console.log(res);
     });
