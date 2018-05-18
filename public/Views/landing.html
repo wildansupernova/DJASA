@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=NTR" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    body{
+      background-color: #5B86E5;
+    }
+
+    
+
+    .button {
+      border-radius: 4px;
+      background-color: #5B86E5;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 30px;
+      padding: 10px;
+      width: 150px;
+      transition: all 1s;
+      cursor: pointer;
+      margin: 5px;
+      line-height: 2em;
+    }
+
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+
+    .button:hover span {
+      padding-right: 25px;
+    }
+
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body style="font-family:NTR;">
+<div class="row" >
+  <div class="col-sm-8" ><h1 style="font-family:Comfortaa; color: white;", align="left"><b>&nbsp Djasa</b></h1></div>
+  <button class="button" style="float:right;"><span>Sign up &nbsp</span></button>
+  <button class="button" style="float:right;"><span>Sign in &nbsp</span></button>
+</div>
+
+<font color="white">
+<div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+          <div class = "container">
+              <div class="row">
+                <div class="col-sm-8">
+                    <img src="la.jpg" alt="Los Angeles" style="width:100%;">
+                </div>
+                <h2>Scarlet Witch</h2>  
+              </div>
+          </div>
+      </div>
+
+      <div class="item">
+        <div class="container" style="min-height:100%" >
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="ny.png" alt="New York" style="width:75%;height:50%;">
+            </div>
+            <h2>Tester</h2>
+          </div>
+        </div>
+      </div>
+    
+      <div class="item">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="ny.jpg" alt="New York" style="width:100%;">
+            </div>
+            <h2>Tester</h2>
+          </div>
+        </div>
+      </div>
+    
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+</font>
+
+</body>
+</html>
