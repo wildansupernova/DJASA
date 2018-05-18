@@ -1,3 +1,6 @@
+*{
+    font-family:'NTR', sans-serif;
+}
 .orange{
     background-color: orange;
     border-radius: 25px;
@@ -32,3 +35,15 @@
 .margin20{
     margin: 20px;
 }
+
+<<<<<<< HEAD
+.container-cara{
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+=======
+
+.goldColor{
+    color:gold;
+}
+>>>>>>> 2654c99896a0ff25f2319e91dc3a4ec94d17ef54

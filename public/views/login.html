@@ -27,22 +27,25 @@
 <body>
     <div ng-controller="loginController">
         <div class="container">
-            <img src="../content/assets/logo.png" class="align-middle">
-            <form id="input-login-form">
-                <div class="form-group">
-                    <label for="input-username-login"><strong>Username</strong></label>
-                    <input type="text" class="form-control" id="input-username-login" aria-describedby="usernameHelp" placeholder="Enter Username" ng-model="login.username">
+            <div class="container">
+                <img src="../content/assets/logo.png" class="align-middle">
+                <div class="col align-self-center" width="30%" width="30%">
+                    <form id="input-login-form">
+                        <div class="form-group">
+                            <label for="input-username-login"><strong>Username</strong></label>
+                            <input type="text" class="form-control" id="input-username-login" aria-describedby="usernameHelp" placeholder="Enter Username" ng-model="login.username">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-password-login"><strong>Password</strong></label>
+                            <input type="password" class="form-control" id="input-password-login" placeholder="Password" ng-model="login.password">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="button-login" ng-submit="submitLogin()">Log in</button>
+                    </form>
+                    <p id="not-have-account">
+                        Belum punya akun ? <a href="/signup">Daftar disini</a>
+                    </p>
                 </div>
-                <div class="form-group">
-                    <label for="input-password-login"><strong>Password</strong></label>
-                    <input type="password" class="form-control" id="input-password-login" placeholder="Password" ng-model="login.password">
-                </div>
-                <button type="submit" class="btn btn-primary btn-block" id="button-login" ng-submit="submitLogin()">Log in</button>
-            </form>
-
-            <p id="not-have-account">
-                Belum punya akun ? <a href="/signup">Daftar disini</a>
-            </p>
+            </div>
         </div>
     </div>
 </body>
