@@ -27,39 +27,39 @@ djasaApp.service('sharedData', function() {
 djasaApp.config(function($routeProvider){
     $routeProvider
         .when("/", {
-            templateUrl : "landing.html",
-            controller: "landingController"
+            templateUrl : "/views/landing.html",
+            // controller: "landingController"
         }).
         when("/login", {
-            templateUrl : "login.html",
+            templateUrl : "/views/login.html",
             controller: "loginController"
         })
         .when("/signup", {
-            templateUrl : "signup.html",
+            templateUrl : "/views/signup.html",
             controller: "signupController"
         })
         .when("/home", {
-            templateUrl: "dashboard.html",
+            templateUrl: "/views/dashboard.html",
             controller: "dashboardController"
         })
         .when("/transaction", {
-            templateUrl: "transaction.html",
+            templateUrl: "/views/transaction.html",
             controller: "transactionController"
         })
         .when("/addservice", {
-            templateUrl: "addPage.html",
+            templateUrl: "/views/addPage.html",
             controller: "addServiceController"
         })
         .when("/myservice", {
-            templateUrl: "listservice.html", //sesuaikan namanya
+            templateUrl: "/views/listservice.html", //sesuaikan namanya
             controller: "myServiceController"
         })
         .when("/detail", {
-            templateUrl: "detail.html",
+            templateUrl: "/views/detail.html",
             controller: "detailController"
         })
         .when("/listservice", {
-            templateUrl: "listservice.html",
+            templateUrl: "/views/listservice.html",
             controller: "listServiceController"
         })
         .otherwise({
@@ -88,14 +88,16 @@ djasaApp.controller("loginController", function($scope, $http) {
         $http.post('/user/login', $scope.login)
             .success(function(data){
                 // sharedData.addData(data);
-                $location.path("/home");
+                if(data.length > 0){
+                    $location.path("/home");
+                }
             })
     }
 });
 
 djasaApp.controller("signupController", function($scope, $http, sharedData) {
     $scope.submitSignup = function() {
-        $http.post('/user/register', $scope.signup)
+        $http.post('/user/signup', $scope.signup)
             .success(function(data){
                 $location.path("/home");
             })

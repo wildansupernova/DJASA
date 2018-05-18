@@ -65,7 +65,7 @@ function elementsQ(varArray){
 }
 
 //Set Static Public file folder
-app.use(express.static(__dirname + 'public'));
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({'extended': 'true'}));
 app.use(bodyParser.json());
 
@@ -76,12 +76,12 @@ app.use(cors())
 app.use(bodyParser.json())
 
 //////////////Route API
-app.get('/',(req,res) => {
-	res.send('Invalid Endpoint');
-})
+// app.get('/',(req,res) => {
+// 	res.send('Invalid Endpoint');
+// })
 // start app
-app.get('*', function(req, res){
-    res.sendFile('./public/index.html');
+app.get('/', function(req, res){
+    res.sendFile('index.html');
 })
 
 //Users
@@ -100,10 +100,9 @@ app.post('/user/register', function(req, res){
 })
 
 app.post('/user/login', function(req, res){
-    var res = select(con,"username,password","Account", function(res){
-        console.log(res);
-    });
-})
+    // var res = select(con,"username,password","Account", function(res){
+    console.log(req.body.username);
+});
 
 app.post('/user/logout', function(req, res){
     var res = select(con,"username,password","Account", function(res){
