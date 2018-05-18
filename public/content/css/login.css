@@ -18,7 +18,24 @@ img {
 #button-login {
     border-radius: 30px;
 }
-
+*{
+color: white;
+animation-name: leftRightIn;
+animation-duration: 1s;
+}
+@keyframes leftRightIn{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80%{
+        transform: translateX(2px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
 #not-have-account {
     margin: 20px;
     text-align: right;
