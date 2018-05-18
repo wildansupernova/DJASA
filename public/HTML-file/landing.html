@@ -15,6 +15,21 @@
   <style>
     *{
       color: white;
+      animation-name: leftRightIn;
+      animation-duration: 1s;
+    }
+    @keyframes leftRightIn{
+        0%{
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+        80%{
+            transform: translateX(2px);
+        }
+        100%{
+            opacity: 1;
+            transform: translate(0);
+        }
     }
     nav body{
       margin-bottom: 2%;
@@ -28,7 +43,11 @@
     .blueBackGround{
       background-color: #5B86E5;
     }
-    
+    .c3{
+      height:170px;
+      width: auto;/*maintain aspect ratio*/
+      max-width:500px;
+    }
   </style>
 </head>
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5B86E5; font-family:NTR;">
@@ -51,11 +70,55 @@
   <body style="font-family:NTR; background-color: #5B86E5">
     <div class="container">
       <div class="jumbotron blueBackGround">
-          <h1 class="display-4">Aplikasi Penyedia Jasa </h1>
-          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <a class="btn btn-primary btn-lg float-right" href="#" role="button">Learn more</a>
-          </p>
+        <div class="row">
+            <div class="col">
+              <h1 class="display-4">Aplikasi Penyedia Jasa </h1>
+              <h2 class="lead">Dengan DJASA sekarang anda dapat membeli ataupun menjual Jasa secara Online, Dengan Mudah anda dapat mencari pekerjaan ataupun membuka lapangan pekerjaan baru bagi orang lain.</h2>
+            </div>
+            <img class="col" src="jasa.png" alt="create_account"></img>
+        </div>
+      </div>
+      <div class="jumbotron blueBackGround">
+        <h1 class="display-8" align="center">Alasan  Bergabung dengan Djasa</h1>  
+      </div>
+      <div class="row">
+          <div class="jumbotron blueBackGround col-4">
+              <img class="c3" src="icon1.png" alt="create_account"></img>
+              <h1 class="display-8" align="center">Buat Akun</h1>
+              <p class="lead" align="center">Buat akun baru anda Gratis dan Cepat, cukup dengan menekan tombol Sign Up Daftarkan diri anda dengan menggunakan Email dan Nomor Telepon anda dan temukan bermacam-macam keuntungan-keuntungan yang dapat anda dapatkan </p>
+          </div>
+          <div class="jumbotron blueBackGround col-4">
+              <img class="c3" src="icon2.png" alt="create_account"></img>
+              <h1 class="display-8" align="center">Cari Djasa</h1>
+              <p class="lead" align="center">Cari Jasa yang anda ingin beli dengan menggunakan search box yang akan dapat diakses setelah anda membuat akun ataupun login menggunakan account anda.</p>
+          </div>
+          <div class="jumbotron blueBackGround col-4">
+              <img class="c3" src="icon4.png" alt="create_account"></img>
+              <h1 class="display-8" align="center">Beli Djasa</h1>
+              <p class="lead" align="center">Beli Jasa dari Penjual Jasa yang anda Inginkan, Lihat Ratingnya dan berikan Rating menurut anda sendiri terhadap penjual jasa tersebut. </p>
+          </div> 
       </div>
     </div>
+    <div class="jumbotron blueBackGround">
+      <h1 class="display-8" align="center">3 Reason Why</h1>  
+    </div>
+    <div class="row">
+        <div class="jumbotron blueBackGround col-4">
+            <img class="c3" src="icon1.png" alt="create_account"></img>
+            <h1 class="display-8" align="center">One for all</h1>
+            <p class="lead" align="center">Mengintegrasikan seluruh bidang jasa yang ada di Indonesia menjadi di satu tempat</p>
+        </div>
+        <div class="jumbotron blueBackGround col-4">
+            <img class="c3" src="icon2.png" alt="create_account"></img>
+            <h1 class="display-8" align="center">One and Only</h1>
+            <p class="lead" align="center">Menjadi salah satu aplikasi pertama yang dapat melakukan penawaran dan pembelian jasa</p>
+        </div>
+        <div class="jumbotron blueBackGround col-4">
+            <img class="c3" src="icon4.png" alt="create_account"></img>
+            <h1 class="display-8" align="center">Easy to Use</h1>
+            <p class="lead" align="center">Mudah digunakan karena akun dapat berperan sebagai penawar jasa (penjasa) dan pembeli jasa</p>
+        </div> 
+    </div>
+  </div>
   </body>
 </html>
